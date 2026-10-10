@@ -1,26 +1,84 @@
 @import "tailwindcss";
 
+@theme {
+  /* Core Token Taxonomy requested */
+  --color-primary: #0B4F3F;
+  --color-primary-hover: #083D31;
+  --color-primary-light: #166C57;
+  --color-primary-dark: #07352B;
+  --color-primary-surface: #EAF4F0;
+
+  --color-accent: #C9A24B;
+  --color-accent-hover: #B58F3B;
+  --color-accent-light: #DFC074;
+  --color-accent-dark: #9A7523;
+  --color-accent-surface: #FAF5E8;
+
+  --color-surface: #FAF6EC;
+  --color-surface-light: #FDFBF6;
+  --color-surface-dark: #F0E8D4;
+  --color-surface-sage: #E8EFEA;
+  --color-surface-sage-light: #F4F8F5;
+  --color-surface-sage-dark: #CFE0D5;
+
+  --color-ink: #1F2933;
+  --color-ink-muted: #52606D;
+  --color-ink-light: #7B8794;
+  --color-ink-border: #D8E0D5;
+
+  /* Fonts */
+  --font-serif: var(--font-cormorant), var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-arabic: var(--font-arabic), serif;
+  --font-gujarati: var(--font-gujarati), sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #FAF6EC;
+  --foreground: #1F2933;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle Geometric Islamic Lattice Pattern Backgrounds */
+.bg-islamic-pattern {
+  background-color: var(--background);
+  background-image: radial-gradient(circle at 50% 50%, rgba(201, 162, 75, 0.12) 1.5px, transparent 1.5px),
+    linear-gradient(to right, rgba(11, 79, 63, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(11, 79, 63, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px, 32px 32px, 32px 32px;
+}
+
+.bg-islamic-emerald-pattern {
+  background-color: #0B4F3F;
+  background-image: radial-gradient(circle at 50% 50%, rgba(201, 162, 75, 0.2) 1.5px, transparent 1.5px),
+    linear-gradient(to right, rgba(201, 162, 75, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(201, 162, 75, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px, 32px 32px, 32px 32px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF6EC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CFE0D5;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9A7523;
 }
