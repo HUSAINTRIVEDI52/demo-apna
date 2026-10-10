@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import {
   MapPin,
@@ -45,7 +46,7 @@ export function ListingCard({ listing, onSelect, onContactHost }: ListingCardPro
     <div className="group bg-ivory-light rounded-2xl border border-sage-200/90 hover:border-gold-primary/50 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
       <div>
         {/* Image Container with Badges */}
-        <div className="relative aspect-16/10 w-full overflow-hidden bg-sage-200 cursor-pointer" onClick={() => onSelect(listing)}>
+        <Link href={`/rooms/${listing.id}`} className="relative aspect-16/10 w-full overflow-hidden bg-sage-200 block cursor-pointer">
           {listing.images && listing.images[0] ? (
             <img
               src={listing.images[0]}
@@ -101,7 +102,7 @@ export function ListingCard({ listing, onSelect, onContactHost }: ListingCardPro
               </span>
             )}
           </div>
-        </div>
+        </Link>
 
         {/* Card Body */}
         <div className="p-4 sm:p-5 space-y-3.5">
@@ -113,12 +114,12 @@ export function ListingCard({ listing, onSelect, onContactHost }: ListingCardPro
                 {listing.location.mohallaOrArea}, {listing.location.city}
               </span>
             </div>
-            <h3
-              onClick={() => onSelect(listing)}
-              className="font-serif text-lg font-bold text-charcoal-main group-hover:text-emerald-900 transition-colors line-clamp-2 cursor-pointer leading-snug"
+            <Link
+              href={`/rooms/${listing.id}`}
+              className="font-serif text-lg font-bold text-charcoal-main group-hover:text-emerald-900 transition-colors line-clamp-2 cursor-pointer leading-snug block"
             >
               {listing.title}
-            </h3>
+            </Link>
           </div>
 
           {/* Masjid Proximity Badge (Crucial Community Feature) */}
@@ -182,13 +183,12 @@ export function ListingCard({ listing, onSelect, onContactHost }: ListingCardPro
 
       {/* Action CTA Buttons */}
       <div className="p-4 pt-0 grid grid-cols-2 gap-2">
-        <button
-          type="button"
-          onClick={() => onSelect(listing)}
-          className="w-full py-2 px-3 rounded-lg bg-sage-100 hover:bg-sage-200 text-emerald-900 font-semibold text-xs transition-colors text-center cursor-pointer border border-sage-200"
+        <Link
+          href={`/rooms/${listing.id}`}
+          className="w-full py-2 px-3 rounded-lg bg-sage-100 hover:bg-sage-200 text-emerald-900 font-semibold text-xs transition-colors text-center cursor-pointer border border-sage-200 block"
         >
           View Details
-        </button>
+        </Link>
         <button
           type="button"
           onClick={() => onContactHost(listing)}

@@ -104,7 +104,7 @@ export function Navbar({ onOpenListModal, onOpenAuthModal }: NavbarProps) {
           {/* Desktop Nav Links */}
           <nav className="hidden lg:flex items-center space-x-7">
             <Link
-              href="#browse"
+              href="/rooms"
               className="text-sm font-medium text-ink hover:text-primary transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-accent hover:after:w-full after:transition-all"
             >
               Browse Rooms
@@ -116,13 +116,13 @@ export function Navbar({ onOpenListModal, onOpenAuthModal }: NavbarProps) {
               List a Vacancy
             </button>
             <Link
-              href="#how-it-works"
+              href="/#how-it-works"
               className="text-sm font-medium text-ink hover:text-primary transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-accent hover:after:w-full after:transition-all"
             >
               How it Works
             </Link>
             <Link
-              href="#trust-safety"
+              href="/#trust-safety"
               className="text-sm font-medium text-ink hover:text-primary transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-accent hover:after:w-full after:transition-all"
             >
               About
@@ -180,7 +180,7 @@ export function Navbar({ onOpenListModal, onOpenAuthModal }: NavbarProps) {
           </div>
 
           <Link
-            href="#browse"
+            href="/rooms"
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2 rounded-md text-sm font-medium text-ink hover:bg-surface-sage"
           >
@@ -196,14 +196,14 @@ export function Navbar({ onOpenListModal, onOpenAuthModal }: NavbarProps) {
             List a Vacancy
           </button>
           <Link
-            href="#how-it-works"
+            href="/#how-it-works"
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2 rounded-md text-sm font-medium text-ink hover:bg-surface-sage"
           >
             How it Works
           </Link>
           <Link
-            href="#trust-safety"
+            href="/#trust-safety"
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2 rounded-md text-sm font-medium text-ink hover:bg-surface-sage"
           >
