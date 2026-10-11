@@ -44,9 +44,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${cormorant.variable} ${inter.variable} ${notoArabic.variable} ${notoGujarati.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-ivory-base text-charcoal-main font-sans selection:bg-gold-muted selection:text-emerald-900">
+      <body
+        suppressHydrationWarning
+        className="min-h-full flex flex-col bg-surface text-ink font-sans selection:bg-accent-surface selection:text-primary"
+      >
         {children}
       </body>
     </html>
